@@ -1,0 +1,27 @@
+{
+  "Core" : {
+    "workers" : 4
+  },
+  "Net" : {
+    "name" : "ssl",
+    "path" : "./",
+    "lib" : "zia-ssl",
+    "config" : {
+	"port" : 1337,
+	"ip_binding" : "0.0.0.0"
+    }
+  },
+  "Modules" : [
+    {
+      "name" : "cgi",
+      "path" : "./",
+      "lib" : "zia-cgi",
+      "config" : {
+        "php-cgi" : "/usr/bin/php-cgi", // chemin vers le binaire cgi 
+        "document_root" : "/home/louis/tek3/cpp_zia/Modules/Cgi", // chemin des scripts php sur le serveur
+        "cgi_alias" : "/cgi-bin",  // alias cgi accesible par le client 
+        "server_software" : "zia-redteam1.5" // useless
+      }
+    }
+  ]
+}
