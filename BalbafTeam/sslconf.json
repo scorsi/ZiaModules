@@ -1,0 +1,4 @@
+{
+    "port": 4567,
+    "max_clients": 3
+}

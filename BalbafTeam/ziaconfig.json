@@ -1,0 +1,54 @@
+{
+  "module_path": [
+    "./",
+    "/usr/local/lib/",
+    "./libs/",
+    "./install/libs/"
+  ],
+  "modules": [
+    "logger",
+    "phpcgi"
+  ],
+ 
+  "net_modules": [
+    "network_module",
+    "ssl_module"    
+  ],
+
+  "virtualhost": [
+    {
+      "network": {
+        "name": "network_module",
+        "settings": {
+          "port": 4244,
+          "max_clients": 10
+        }
+      },
+      "modules": [
+        {
+          "name": "phpcgi",
+            "settings": {
+		"cgi_path": "/usr/bin/php-cgi"
+          }
+        }
+      ]
+    },
+    {
+      "network": {
+        "name": "ssl_module",
+        "settings": {
+          "port": 4567,
+          "max_clients": 3
+        }
+      },
+      "modules": [
+        {
+          "name": "phpcgi",
+          "settings": {
+            "cgi_path": "/usr/bin/php-cgi"
+          }
+        }
+      ]
+    }
+  ]
+}
