@@ -11,14 +11,14 @@
   ],
  
   "net_modules": [
-    "network_module",
-    "ssl_module"    
+    "network",
+    "ssl"    
   ],
 
   "virtualhost": [
     {
       "network": {
-        "name": "network_module",
+        "name": "network",
         "settings": {
           "port": 4244,
           "max_clients": 10
@@ -35,7 +35,7 @@
     },
     {
       "network": {
-        "name": "ssl_module",
+        "name": "ssl",
         "settings": {
           "port": 4567,
           "max_clients": 3
